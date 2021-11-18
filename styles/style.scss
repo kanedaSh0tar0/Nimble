@@ -123,7 +123,7 @@ body {
             font-family: $Montserrat;
             font-size: 16px;
             font-weight: 600;
-            line-height: 120%;
+            line-height: 125%;
 
             .nav__item {
                 margin: 0 50px 0 0;
@@ -186,7 +186,8 @@ body {
         display: flex;
         justify-content: space-between;
         height: 330px;
-        margin: 0 0 0 34px;
+        left: 25px;
+        padding: 0 40px 0 0;
         writing-mode: tb-rl;
         transform: rotate(180deg);
 
@@ -242,7 +243,7 @@ body {
                 background: $ColorBlack;
                 color: #fff;
                 border-radius: 20px;
-                padding: 50px 50px 50px 50px;
+                padding: 50px;
 
                 &::before {
                     content: "";
@@ -283,7 +284,7 @@ body {
                     font-family: $Montserrat;
                     font-weight: 500;
                     font-size: 14px;
-                    line-height: 160%;
+                    line-height: 164%;
                 }
             }
         }
@@ -331,10 +332,14 @@ body {
                 .description__text {
                     font-weight: 500;
                     font-size: 16px;
-                    line-height: 160%;
+                    line-height: 150%;
                     color: #8fa2a6;
 
                     margin: 0 0 38px 0;
+
+                    &:last-child {
+                        margin: 0 0 0 0;
+                    }
                 }
             }
         }
@@ -342,43 +347,170 @@ body {
 }
 
 .for-what {
-    padding: 275px 0 0 0;
+    padding: 159px 0 0 0;
 
     .for-what__wrapper {
         @include wrapper(1300px);
+        position: relative;
 
         .for-what__block-bg {
+            position: absolute;
+            width: 448px;
+            height: 553px;
+            background: $ColorBlack;
+            border-radius: 20px;
 
+            &::before {
+                content: "";
+                position: absolute;
+                top: -1px;
+                right: -1px;
+                bottom: -1px;
+                left: -1px;
+                border-radius: 20px;
+                background: linear-gradient(327.01deg, #05030e 69.78%, #7ee8a0 133.71%);
+                z-index: -2;
+            }
+        }
+
+        .ellipse3 {
+            position: absolute;
+            width: 848px;
+            height: 848px;
+            left: 502px;
+            top: -109px;
+            z-index: 1;
+
+            background: rgba(15, 49, 35, 0.8);
+            filter: blur(430px);
         }
 
         .for-what__circles {
+            position: absolute;
+            left: 548px;
+            top: -242px;
+            z-index: -1;
         }
 
         .circles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 859px;
+            height: 859px;
+            border-radius: 50%;
+            border: 1px solid #a2dc8914;
+            z-index: 1;
+
+            .circles__ball {
+                position: absolute;
+                width: 37px;
+                height: 37px;
+                left: 0;
+                top: 290px;
+
+                background: radial-gradient(102.7% 102.7% at 27.03% 18.92%, #c9ea77 0%, #65be76 100%);
+                box-shadow: 0px 14px 42px #92d176;
+                border-radius: 50%;
+            }
+
             .circles__circle1 {
-                .circle__circle2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 427px;
+                height: 427px;
+
+                border-radius: 50%;
+                border: 1px solid rgba(162, 220, 137, 0.15);
+
+                .circles__ball1 {
+                    position: absolute;
+                    width: 62px;
+                    height: 62px;
+                    left: 550px;
+                    top: 550px;
+
+                    background: radial-gradient(64.44% 64.44% at 31.11% 35.56%, #c6b92a 0%, #dfa238 100%);
+                    box-shadow: 0px 14px 43px #d5ab32;
+                    border-radius: 50%;
+                }
+
+                .circles__circle2 {
+                    display: flex;
+                    justify-content: center;
+                    width: 205px;
+                    height: 205px;
+
+                    border-radius: 50%;
+                    border: 1px solid rgba(162, 220, 137, 0.35);
+
+                    .circles__ball2 {
+                        position: absolute;
+                        width: 23px;
+                        height: 23px;
+                        left: 480px;
+                        top: 338px;
+
+                        background: radial-gradient(102.7% 102.7% at 27.03% 18.92%, #c9ea77 0%, #65be76 100%);
+                        box-shadow: 0px 14px 42px #92d176;
+                        border-radius: 50%;
+                    }
+
+                    .circles__letter {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-40%);
+                    }
                 }
             }
         }
 
         .for-what__content {
+            color: #fff;
+            position: relative;
+            left: 130px;
+            top: 116px;
+
             .for-what__title {
+                display: inline-block;
+
                 font-family: $Montserrat;
                 font-size: 24px;
                 font-weight: 700;
                 line-height: 80%;
-                color: #CAEE39;
+                text-shadow: 0px 14px 44px rgba(220, 152, 57, 0.6);
 
-                background: linear-gradient(139.33deg, #CAEE39 -14.59%, #E99A3D 99.86%);
+                background: linear-gradient(139.33deg, #caee39 -14.59%, #e99a3d 99.86%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
 
             .for-what__list {
-            }
+                list-style: none;
+                margin: 46px 0 0 0;
+                padding: 0 0 0 45px;
 
-            .list {
-                .list__item {
+                .for-what__list-item {
+                    position: relative;
+
+                    font-family: $Montserrat;
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 300%;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 19px;
+                        height: 8px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -45px;
+
+                        background: linear-gradient(105.56deg, #e2f685 18.43%, #8af9ad 89.58%);
+                        border-radius: 8px;
+                    }
                 }
             }
         }
