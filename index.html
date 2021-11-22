@@ -10,10 +10,6 @@
 </head>
 
 <body>
-    <img class="first-screen-hand" src="./img/firstScreenHand.png" alt="">
-    <div class="ellipse1"></div>
-    <div class="ellipse2"></div>
-
     <header class="header">
         <div class="header__wrapper">
             <div class="header__logo logo">
@@ -37,6 +33,10 @@
     </header>
 
     <section class="first-screen">
+        <img class="first-screen__hand" src="./img/firstScreenHand.png" alt="">
+        <div class="first-screen__ellipse1"></div>
+        <div class="first-screen__ellipse2"></div>
+
         <aside class="social-media">
             <a href="" class="social-media__link">Instagram</a>
             <a href="" class="social-media__link">Telegram</a>
@@ -96,13 +96,13 @@
     </section>
 
     <main>
-        <section class="description">
-            <div class="description__wrapper">
-                <div class="description__content">
-                    <div class="description__img-bg">
-                        <img src="./img/description/descriptionICON.svg" class="description__img-icon">
+        <section class="info">
+            <div class="info__wrapper">
+                <div class="info__content">
+                    <div class="info__img-bg">
+                        <img src="./img/info/infoICON.svg" class="description__img-icon">
                     </div>
-                    <div class="description__text-content">
+                    <div class="info__text-content description">
                         <h2 class="description__title">Nimble Token</h2>
                         <p class="description__text">Nimble Token – это utility-токен игровой платформы KiboTron,
                             построенной на смарт-контрактах Tron. Применение технологии
@@ -130,7 +130,7 @@
                 <div class="ellipse3"></div>
 
                 <div class="for-what__circles circles">
-                    
+
                     <div class="circles__ball"></div>
                     <div class="circles__circle1">
 
@@ -157,14 +157,460 @@
                 </div>
             </div>
         </section>
+
+        <section class="statistic">
+            <div class="statistic__wrapper">
+                <div class="statistic__title-area">
+                    <h2 class="statistic__title">Стейкинг Nimble Token</h2>
+                    <a class="statistic__select">Доход на стейкинг</a>
+                </div>
+
+                <div class="statistic__charts">
+                    <div class="statistic__charts-wrapper">
+                        <div class="statistic__charts-marker-area">
+                            <span class="statistic__charts-marker statistic__charts-marker_orange">Без ускорителя</span>
+                            <span class="statistic__charts-marker statistic__charts-marker_green">С ускорителем</span>
+                        </div>
+
+                        <div class="statistic__charts-column">
+                            <img class="stattistic__charts-img" src="./img/statistic/stat-1.svg" alt="">
+                            <span class="statistic__charts-number">1 - 5 000</span>
+                            <div class="statistic__charts-column-blur"></div>
+                        </div>
+                        <div class="statistic__charts-column">
+                            <img class="stattistic__charts-img" src="./img/statistic/stat-2.svg" alt="">
+                            <span class="statistic__charts-number">5 001 - 30 000</span>
+                            <div class="statistic__charts-column-blur"></div>
+                        </div>
+                        <div class="statistic__charts-column">
+                            <img class="stattistic__charts-img" src="./img/statistic/stat-3.svg" alt="">
+                            <span class="statistic__charts-number">30 001 - 100 000</span>
+                            <div class="statistic__charts-column-blur"></div>
+                        </div>
+                        <div class="statistic__charts-column">
+                            <img class="stattistic__charts-img" src="./img/statistic/stat-4.svg" alt="">
+                            <span class="statistic__charts-number">100 001 - 300 000</span>
+                            <div class="statistic__charts-column-blur"></div>
+                        </div>
+                        <div class="statistic__charts-column">
+                            <img class="stattistic__charts-img" src="./img/statistic/stat-5.svg" alt="">
+                            <span class="statistic__charts-number">300 001 - 1 000 000</span>
+                            <div class="statistic__charts-column-blur"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="statistic__text description">
+                    <p class="description__text">Держатель Nimble Token имеет возможность получать вознаграждение за
+                        хранение токенов на балансе. Процент стейкинга зависит от текущего количества Nimble Token на
+                        балансе.
+                    </p>
+                    <p class="description__text">Стейкинг Nimble Token включается с момента размещения токенов на
+                        балансе.
+                    </p>
+                    <p class="description__text">Ускоритель – коэффициент 1.5 к базовому проценту стейкинга. Применяется
+                        для держателей токенов KBT с количеством от 3000 KBT.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="characteristics">
+            <div class="characteristics__wrapper">
+                <div class="characteristics__visual">
+                    <div class="characteristics__ellipse"></div>
+                    <p class="characteristics__visual-description characteristics__visual-description_1">Маркетинг</p>
+                    <p class="characteristics__visual-description characteristics__visual-description_2">Airdrop</p>
+                    <p class="characteristics__visual-description characteristics__visual-description_3">Токенсейл</p>
+
+                    <div class="characteristics__visual-circle">
+                        <div class="characteristics__visual-circle-in">
+                            <div class="characteristics__visual-logo-area">
+                                <img class="characteristics__visual-logo" src="./img/characteristics/logo.svg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="characteristics__visual-title">Максимальное количество токенов</h2>
+                    <p class="characteristics__visual-number">1 000 000 000</p>
+                </div>
+
+                <div class="characteristics__list">
+                    <div class="description__title">Характеристики Nimble Token</div>
+
+                    <div class="characteristics__list-items">
+                        <ul class="characteristics__left-column">
+                            <li class="description__text">Символ: </li>
+                            <li class="description__text">Блокчейн: </li>
+                            <li class="description__text">Стандарт: </li>
+                            <li class="description__text">Общая эмиссия:</li>
+                            <li class="description__text">Первичная эмиссия: </li>
+                            <li class="description__text">Токенсейл:</li>
+                            <li class="description__text">Airdrop:</li>
+                            <li class="description__text">Маркетинг: </li>
+                        </ul>
+
+                        <ul class="characteristics__right-column">
+                            <li>NIMB</li>
+                            <li>Tron</li>
+                            <li>TRC20</li>
+                            <li>1 000 000 000</li>
+                            <li>55 000 000</li>
+                            <li>30 000 000</li>
+                            <li>5 000 000</li>
+                            <li>20 000 000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sale">
+            <div class="sale__wrapper">
+                <div class="sale__ellipse"></div>
+                <h2 class="sale__title">Token Sale</h2>
+
+                <div class="sale__content">
+                    <div class="sale__card-area">
+                        <div class="sale__card-row">
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 1</h3>
+                                <span class="card__price">$0.01</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 2</h3>
+                                <span class="card__price">$0.015</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 3</h3>
+                                <span class="card__price">$0.02</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 4</h3>
+                                <span class="card__price">$0.025</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 5</h3>
+                                <span class="card__price">$0.03</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                        </div>
+
+                        <div class="sale__card-row">
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 6</h3>
+                                <span class="card__price">$0.035</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 7</h3>
+                                <span class="card__price">$0.04</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 8</h3>
+                                <span class="card__price">$0.045</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 9</h3>
+                                <span class="card__price">$0.05</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                            <div class="sale__card card">
+                                <div class="card__ellipse"></div>
+                                <h3 class="card__round">раунд 10</h3>
+                                <span class="card__price">$0.055</span>
+                                <p class="card__number">3 000 000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sale__conditions-area">
+                        <div class="conditions-card">
+                            <img class="conditions-card__logo" src="./img/logo.svg">
+                            <h3 class="conditions-card__title">условия</h3>
+                            <div class="conditions-card__text-block">
+                                <p class="conditions-card__text-block-title">Длительность раундов:</p>
+                                <p class="conditions-card__text-block-text">Каждый раунд продолжается до распродажи 3
+                                    000 000 Nimble Token</p>
+                            </div>
+                            <div class="conditions-card__text-block">
+                                <p class="conditions-card__text-block-title">Валюта покупки:</p>
+                                <p class="conditions-card__text-block-text">TRX, USDT (TRC20), LTC, BTC, DOGE</p>
+                            </div>
+                            <div class="conditions-card__text-block">
+                                <p class="conditions-card__text-block-title">Минимальная сумма покупки:</p>
+                                <p class="conditions-card__text-block-text">$10.00</p>
+                            </div>
+                        </div>
+                        <button class="sale__conditions-btn">Принять участие</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partnership">
+            <img class="partnership__hand" src="./img/partnership/partnershipHand.png">
+
+            <div class="partnership__wrapper">
+
+                <div class="partnership__program">
+                    <div class="partnership__program-condition">
+                        <h2 class="partnership__title">Партнёрская программа</h2>
+
+                        <div class="partnership__levels">
+                            <div class="partnership__level-info">
+                                <div class="partnership__level-title">
+                                    <span class="partnership__level-num">Уровень 1</span>
+                                    <p
+                                        class="partnership__level-num-description partnership__level-num-description_green">
+                                        личная покупка от $30 </p>
+                                </div>
+
+                                <div class="partnership__liver-timeline">
+                                    <div class="partnership__level-strip">
+                                        <div class="partnership__level-strip-in partnership__level-strip_green"></div>
+                                    </div>
+                                    <div class="partnership__level-percent partnership__level-percent_green">15%</div>
+                                </div>
+                            </div>
+                            <div class="partnership__level-info">
+                                <div class="partnership__level-title">
+                                    <span class="partnership__level-num">Уровень 2</span>
+                                    <p
+                                        class="partnership__level-num-description partnership__level-num-description_yellow">
+                                        оборот от $100 </p>
+                                </div>
+
+                                <div class="partnership__liver-timeline">
+                                    <div class="partnership__level-strip">
+                                        <div class="partnership__level-strip-in partnership__level-strip_yellow"></div>
+                                    </div>
+                                    <div class="partnership__level-percent partnership__level-percent_yellow">7%</div>
+                                </div>
+                            </div>
+                            <div class="partnership__level-info">
+                                <div class="partnership__level-title">
+                                    <span class="partnership__level-num">Уровень 3</span>
+                                    <p
+                                        class="partnership__level-num-description partnership__level-num-description_yellow">
+                                        оборот от $500 </p>
+                                </div>
+
+                                <div class="partnership__liver-timeline">
+                                    <div class="partnership__level-strip">
+                                        <div class="partnership__level-strip-in partnership__level-strip_yellow"></div>
+                                    </div>
+                                    <div class="partnership__level-percent partnership__level-percent_yellow">7%</div>
+                                </div>
+                            </div>
+                            <div class="partnership__level-info">
+                                <div class="partnership__level-title">
+                                    <span class="partnership__level-num">Уровень 4</span>
+                                    <p
+                                        class="partnership__level-num-description partnership__level-num-description_orange">
+                                        оборот от $1 000 </p>
+                                </div>
+
+                                <div class="partnership__liver-timeline">
+                                    <div class="partnership__level-strip">
+                                        <div class="partnership__level-strip-in partnership__level-strip_orange"></div>
+                                    </div>
+                                    <div class="partnership__level-percent partnership__level-percent_orange">5%</div>
+                                </div>
+                            </div>
+                            <div class="partnership__level-info">
+                                <div class="partnership__level-title">
+                                    <span class="partnership__level-num">Уровень 5</span>
+                                    <p
+                                        class="partnership__level-num-description partnership__level-num-description_orange">
+                                        оборот от $3 000 </p>
+                                </div>
+
+                                <div class="partnership__liver-timeline">
+                                    <div class="partnership__level-strip">
+                                        <div class="partnership__level-strip-in partnership__level-strip_orange"></div>
+                                    </div>
+                                    <div class="partnership__level-percent partnership__level-percent_orange">5%</div>
+                                </div>
+                            </div>
+                            <div class="partnership__level-info">
+                                <div class="partnership__level-title">
+                                    <span class="partnership__level-num">Уровень 6</span>
+                                    <p
+                                        class="partnership__level-num-description partnership__level-num-description_red">
+                                        оборот от $5 000 </p>
+                                </div>
+
+                                <div class="partnership__liver-timeline">
+                                    <div class="partnership__level-strip">
+                                        <div class="partnership__level-strip-in partnership__level-strip_red"></div>
+                                    </div>
+                                    <div class="partnership__level-percent partnership__level-percent_red">3%</div>
+                                </div>
+                            </div>
+                            <div class="partnership__level-info">
+                                <div class="partnership__level-title">
+                                    <span class="partnership__level-num">Уровень 7</span>
+                                    <p
+                                        class="partnership__level-num-description partnership__level-num-description_red">
+                                        оборот от $10 000 </p>
+                                </div>
+
+                                <div class="partnership__liver-timeline">
+                                    <div class="partnership__level-strip">
+                                        <div class="partnership__level-strip-in partnership__level-strip_red"></div>
+                                    </div>
+                                    <div class="partnership__level-percent partnership__level-percent_red">3%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partnership__text-area">
+                        <img class="partnership__text-icon" src="./img/partnership/partnershipICON.svg">
+                        <p class="partnership__text">Участник Tokensale имеет возможность получать вознаграждение за
+                            продажу Nimble Token в своей структуре на 7 уровнях. Уровни структуры, с которых доступен
+                            этот бонус, открываются в зависимости от общего оборота в структуре, включая собственные
+                            покупки участника. Вознаграждение выплачивается в той валюте, в которой произошла покупка
+                            Nimble Token в структуре – TRX, USDT, LTC, DTC, DOGE.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="kibotron">
+            <div class="kibotron__ellipse"></div>
+
+            <div class="kibotron__circles circles">
+
+                <div class="circles__ball"></div>
+                <div class="circles__circle1">
+
+                    <div class="circles__ball1"></div>
+                    <div class="circles__circle2">
+
+                        <div class="circles__ball2"></div>
+                        <img class="circles__letter" src="./img/kibotron/k.svg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="kibotron__wrapper">
+                <div class="kibotron__content">
+                    <div class="kibotron__title-area">
+                        <img class="kibotron__title-icon" src="./img/kibotron/titleICON.svg">
+                        <h2 class="kibotron__title">Kibotron</h2>
+                    </div>
+
+                    <div class="kibotron__cards">
+                        <div class="kibotron__cards-row">
+                            <div class="card">
+                                <div class="card__circle-area card__circle-area_gradient1">
+                                    <div class="card-circle"></div>
+                                </div>
+
+                                <div class="card__info">
+                                    <h3 class="card__title">100 % честность<br> и прозрачность </h3>
+                                    <p class="card__text">проведения игр благодаря блокчейн и смарт-контрактам</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__circle-area card__circle-area_gradient2">
+                                    <div class="card-circle"></div>
+                                </div>
+                                <div class="card__info">
+                                    <h3 class="card__title">мгновенные<br> выплаты</h3>
+                                    <p class="card__text">призовых и бонусов и легкая конвертация в фиат благодаря
+                                        популярности Tron
+                                        (TRX)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kibotron__cards-row">
+                            <div class="card">
+                                <div class="card__circle-area card__circle-area_gradient3">
+                                    <div class="card-circle"></div>
+                                </div>
+
+                                <div class="card__info">
+                                    <h3 class="card__title">Доступность игр<br> и инструментов</h3>
+                                    <p class="card__text">для построения бизнеса 24/7 из любой точки мира благодаря
+                                        интернету</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__circle-area card__circle-area_gradient4">
+                                    <div class="card-circle"></div>
+                                </div>
+
+                                <div class="card__info">
+                                    <h3 class="card__title">абсолютная<br> анонимность</h3>
+                                    <p class="card__text">при участии в играх и получении роялти, выигрышей и бонусов от
+                                        структуры
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kibotron__platform-link">
+                <p class="kibotron__platform-link-text">MVP-версия игровой платформы KiboTron c действующими<br> лотереями и
+                    количеством пользователей 6000 +</p>
+                <button class="kibotron__platform-btn">Перейти</button>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer__ellipse"></div>
+
+        <div class="footer__wrapper">
+            <p class="footer__cooperation">По вопросам сотрудничества: <span class="footer__cooperation-email">kibotronmedia@gmail.com</span></p>
+        
+            <div class="footer__social-media">
+                <div class="footer__social-media-card">
+                    <img class="footer__social-media-icon" src="./img/footer/group-channel.svg">
+                    <span class="footer__social-media-name">Group</span>
+                </div>
+                <div class="footer__social-media-card">
+                    <img class="footer__social-media-icon" src="./img/footer/group-channel.svg">
+                    <span class="footer__social-media-name">channel</span>
+                </div>
+                <div class="footer__social-media-card">
+                    <img class="footer__social-media-icon" src="./img/footer/youtube.svg">
+                    <span class="footer__social-media-name">Youtube</span>
+                </div>
+                <div class="footer__social-media-card">
+                    <img class="footer__social-media-icon" src="./img/footer/twitter.svg">
+                    <span class="footer__social-media-name">twitter</span>
+                </div>
+                <div class="footer__social-media-card">
+                    <img class="footer__social-media-icon" src="./img/footer/medium.svg">
+                    <span class="footer__social-media-name">Medium</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
-
-
-
-
-
-
-
