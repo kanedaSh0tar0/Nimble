@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Nimble</title>
 </head>
@@ -28,6 +28,16 @@
             <div class="login-area">
                 <button class="login-area__btn">Регистрация</button>
                 <button class="login-area__btn login-area__btn_login">Войти</button>
+            </div>
+
+            <img class="header__mobile-login" src="./img/login-mobile.svg">
+
+            <div class="header__boorger boorger">
+                <div class="boorger__line boorger__line_top"></div>
+                <div class="boorger__line boorger__line_mid"></div>
+                <div class="boorger__line boorger__line_bot"></div>
+                <div class="boorger__line boorger__line_close"></div>
+                <div class="boorger__line boorger__line_close"></div>
             </div>
         </div>
     </header>
@@ -211,6 +221,11 @@
                     </div>
                 </div>
 
+                <div class="statistic__arrows-area">
+                    <img class="statistic__arrow" src="./img/arrow.svg">
+                    <img class="statistic__arrow" src="./img/arrow.svg">
+                </div>
+
                 <div class="statistic__text description">
                     <p class="description__text">Держатель Nimble Token имеет возможность получать вознаграждение за
                         хранение токенов на балансе. Процент стейкинга зависит от текущего количества Nimble Token на
@@ -290,6 +305,8 @@
                                 <span class="card__price">$0.01</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow active-arrow" src="./img/arrow.svg">
                             </div>
                             <div class="sale__card">
                                 <div class="card">
@@ -298,6 +315,8 @@
                                 <span class="card__price">$0.015</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                             </div>
                             <div class="sale__card">
                                 <div class="card">
@@ -306,6 +325,8 @@
                                 <span class="card__price">$0.02</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                             </div>
                             <div class="sale__card">
                                 <div class="card">
@@ -314,6 +335,8 @@
                                 <span class="card__price">$0.025</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                             </div>
                             <div class="sale__card">
                                 <div class="card">
@@ -322,6 +345,8 @@
                                 <span class="card__price">$0.03</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                             </div>
                         </div>
 
@@ -333,6 +358,8 @@
                                     <span class="card__price">$0.035</span>
                                     <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                                
                             </div>
                             <div class="sale__card">
@@ -342,6 +369,8 @@
                                 <span class="card__price">$0.04</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                             </div>
                             <div class="sale__card">
                                 <div class="card">
@@ -350,6 +379,8 @@
                                 <span class="card__price">$0.045</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                             </div>
                             <div class="sale__card">
                                 <div class="card">
@@ -358,6 +389,8 @@
                                 <span class="card__price">$0.05</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                             </div>
                             <div class="sale__card">
                                 <div class="card">
@@ -366,6 +399,8 @@
                                 <span class="card__price">$0.055</span>
                                 <p class="card__number">3 000 000</p>
                                 </div>
+
+                                <img class="card__arrow" src="./img/arrow.svg">
                             </div>
                         </div>
                     </div>
@@ -644,6 +679,7 @@
         </div>
     </footer>
 
+    <script src="./scripts/boorger.js"></script>
     <script src="./scripts/animation.js"></script>
 </body>
 
