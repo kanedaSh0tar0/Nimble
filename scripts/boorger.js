@@ -4,16 +4,13 @@ const nav = document.querySelector('.nav')
 const navItem = document.querySelectorAll('.nav__item')
 const bodyBlocked = document.getElementsByTagName('html')
 
+let check = true
+
 boorgerBtn.addEventListener('click', () => {
     setTimeout(() => {
         btnAnimation()
         showNav()
     }, 100)
-})
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 1240) {
-        nav.style.opacity = 1
-    } else nav.style.opacity = 0
 })
 
 function btnAnimation() {
