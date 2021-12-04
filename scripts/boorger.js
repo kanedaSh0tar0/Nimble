@@ -1,55 +1,68 @@
 const boorgerBtn = document.querySelector('.boorger')
 const boorgerLines = boorgerBtn.querySelectorAll('.boorger__line')
-const boorgerCloseLines = boorgerBtn.querySelectorAll('.boorger__line_close')
 const nav = document.querySelector('.nav')
+const navItem = document.querySelectorAll('.nav__item')
+const bodyBlocked = document.getElementsByTagName('html')
 
-let show = false
+boorgerBtn.addEventListener('click', () => {
+    setTimeout(() => {
+        btnAnimation()
+        showNav()
+    }, 100)
+})
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1240) {
+        nav.style.opacity = 1
+    } else nav.style.opacity = 0
+})
 
-const menuMove = () => {
-    if (show) {
-        moveBtnLines('0')
-        showNav('Hide')
-    } else if (!show) {
-        moveBtnLines('300')
-        showNav('Show')
-    }
-
-    function moveBtnLines(value) {
-        boorgerLines.forEach((item, ind) => {
-            if (ind < 3) {
-                let interval = setInterval(() => {
-                    item.style.transform = `translateX(${value}%)`
-                    clearInterval(interval)
-                }, ind * 50)
-            }
-        })
-
-        setTimeout(() => {
-            boorgerCloseLines.forEach(item => {
-                item.style.opacity = `${value}%`
-            })
-        }, value)
-    }
-
-    function showNav(value) {
-        if (value == 'Show') {
-            nav.classList.toggle('boorger-nav')
-            document.body.style.overflowY = 'hidden'
-
-            setTimeout(() => {
-                nav.style.opacity = 1
-            }, 10)
-        } else if (value == 'Hide') {
-            nav.style.opacity = 0
-            document.body.style.overflowY = ''
-
-            setTimeout(() => {
-                nav.classList.toggle('boorger-nav')
-            }, 1000)
+function btnAnimation() {
+    for (let i = 0; i < 3; i++) {
+        if (boorgerLines[i].style.transform == 'translateX(-300%)' || boorgerLines[i].style.transform == 'translateX(300%)') {
+            boorgerLines[i].style.transform = 'translateX(0)'
+        } else {
+            i % 2 == 0 ? boorgerLines[i].style.transform = 'translateX(-300%)' : boorgerLines[i].style.transform = 'translateX(300%)'
         }
     }
 
-    show = !show
+    for (let i = 3; i < boorgerLines.length; i++) {
+        boorgerLines[i].style.opacity == 0 ? boorgerLines[i].style.opacity = 1 : boorgerLines[i].style.opacity = 0
+    }
 }
 
-boorgerBtn.addEventListener('click', menuMove)
+function showNav() {
+    if (nav.style.opacity == 0) {
+        nav.classList.add('boorger-nav')
+        bodyBlocked[0].style.overflowY = 'hidden'
+
+        setTimeout(() => {
+            nav.style.opacity = 1
+        }, 10)
+    } else {
+        nav.style.opacity = 0
+        bodyBlocked[0].style.overflowY = ''
+
+        setTimeout(() => {
+            nav.classList.remove('boorger-nav')
+        }, 300)
+    }
+}
+
+navItem.forEach(item => {
+    if (!item.classList.contains('nav__item_select')) {
+        item.addEventListener('click', event => {
+            event.preventDefault()
+    
+            let href = item.getAttribute('href')
+            document.querySelector(`${href}`).scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            })
+    
+            if (window.innerWidth < 1240) {
+                showNav()
+                btnAnimation()
+            }
+        })
+    }
+});

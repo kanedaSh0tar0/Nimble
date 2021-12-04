@@ -105,6 +105,7 @@ body {
     background: $ColorBlack;
     font-family: "Montserrat", sans-serif;
     color: #fff;
+    user-select: none;
 }
 
 .header {
@@ -150,7 +151,7 @@ body {
         .nav {
             display: flex;
             align-items: center;
-            transition: opacity 1s linear;
+            transition: opacity 0.3s linear;
 
             font-size: 16px;
             font-weight: 600;
@@ -161,6 +162,7 @@ body {
                 text-decoration: none;
                 color: #fff;
                 transition: all 0.1s linear;
+                cursor: pointer;
 
                 &:hover {
                     text-shadow: 0 0 30px rgb(138, 249, 173);
@@ -194,8 +196,12 @@ body {
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(5, 3, 14, 0.6);
+            background: rgba(5, 3, 14, 0.9);
             z-index: 1;
+
+            .nav__item {
+                margin: 0;
+            }
         }
 
         .header__boorger {
@@ -310,17 +316,6 @@ body {
 
         right: 22px;
         top: 50px;
-    }
-
-    .nav {
-        display: flex;
-        flex-direction: column;
-
-        .nav__item {
-            position: relative;
-            transform: translateX(200%);
-            margin: 0 0 50px 0;
-        }
     }
 
     .first-screen__hand {
@@ -2092,7 +2087,7 @@ body {
                 @media (max-width: $md5) {
                     padding: 50px 0 0;
                     flex-direction: column;
-                    
+
                     .partnership__text-icon {
                         margin: 0 0 20px 0;
                     }
