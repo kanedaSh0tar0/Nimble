@@ -162,6 +162,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: rgba(5, 3, 14, 0.9);
+  overflow-y: hidden;
   z-index: 1;
 }
 
