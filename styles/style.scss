@@ -81,9 +81,31 @@ $md5: 375px;
         color: #8fa2a6;
 
         margin: 0 0 38px 0;
+    }
 
-        &:last-child {
-            margin: 0;
+    .description__accordion {
+        display: none;
+        align-items: center;
+
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 120%;
+        color: #b4f299;
+
+        &::after {
+            content: "\25BC";
+            margin: 0 0 0 12px;
+            transition: transform .3s linear;
+        }
+
+        @media (max-width: $md3) {
+            display: flex;
+        }
+    }
+
+    .description__accordion-after-rotate {
+        &::after {
+            transform: rotate(-180deg);
         }
     }
 }
@@ -96,7 +118,6 @@ $md5: 375px;
 
 html {
     overflow-x: hidden;
-    margin-right: calc(-1 * (100vw - 100%));
 }
 
 body {
@@ -698,20 +719,11 @@ body {
                 @extend %description;
                 flex: 1 1 578px;
 
-                .description__accordeon {
-                    display: none;
-                    align-items: center;
-
-                    font-size: 14px;
-                    font-weight: 600;
-                    line-height: 120%;
-                    color: #b4f299;
-
-                    &::after {
-                        content: "\25BC";
-                        margin: 0 0 0 12px;
-                    }
+                .description__text-area {
+                    transition: .2s linear;
                 }
+
+                
 
                 @media (max-width: $md4) {
                     .description__title {
@@ -742,16 +754,8 @@ body {
                 .info__text-content {
                     flex: auto;
 
-                    .description__text {
-                        display: none;
-
-                        &:first-child {
-                            display: block;
-                        }
-                    }
-
-                    .description__accordeon {
-                        display: flex;
+                    .description__text-area {
+                        overflow: hidden;
                     }
                 }
             }
@@ -1010,6 +1014,7 @@ body {
 
     .statistic__wrapper {
         @include wrapper(1024px);
+        @extend %description;
 
         .statistic__title-area {
             display: flex;
@@ -1181,40 +1186,16 @@ body {
         .statistic__text {
             @extend %description;
             margin: 90px 0 0 0;
+            transition: .2s linear;
 
             @media (max-width: $md3) {
-                .description__text {
-                    display: none;
-
-                    &:first-child {
-                        display: block;
-                    }
-                }
+                overflow: hidden;
             }
 
             @media (max-width: $md4) {
                 .description__text {
                     font-size: 14px;
                 }
-            }
-        }
-
-        .description__accordeon {
-            display: none;
-            align-items: center;
-
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 120%;
-            color: #b4f299;
-
-            &::after {
-                content: "\25BC";
-                margin: 0 0 0 12px;
-            }
-
-            @media (max-width: $md3) {
-                display: block;
             }
         }
     }
@@ -2044,6 +2025,9 @@ body {
                 }
 
                 .partnership__text-container {
+                    @extend %description;
+                    z-index: 1;
+
                     .partnership__text {
                         font-size: 16px;
                         font-weight: 500;
@@ -2057,25 +2041,6 @@ body {
                             -webkit-box-orient: vertical;
 
                             margin: 0 0 20px 0;
-                        }
-                    }
-
-                    .description__accordeon {
-                        display: none;
-                        align-items: center;
-
-                        font-size: 14px;
-                        font-weight: 600;
-                        line-height: 120%;
-                        color: #b4f299;
-
-                        &::after {
-                            content: "\25BC";
-                            margin: 0 0 0 12px;
-                        }
-
-                        @media (max-width: $md3) {
-                            display: block;
                         }
                     }
                 }

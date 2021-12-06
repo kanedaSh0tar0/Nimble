@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap");
-.info .info__wrapper .info__content .info__text-content .description__title, .statistic .statistic__wrapper .statistic__text .description__title {
+.info .info__wrapper .info__content .info__text-content .description__title, .statistic .statistic__wrapper .description__title, .partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__title {
   font-weight: bold;
   font-size: 24px;
   line-height: 90%;
   margin: 0 0 54px 0;
 }
 
-.info .info__wrapper .info__content .info__text-content .description__text, .statistic .statistic__wrapper .statistic__text .description__text {
+.info .info__wrapper .info__content .info__text-content .description__text, .statistic .statistic__wrapper .description__text, .partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__text {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
@@ -14,8 +14,37 @@
   margin: 0 0 38px 0;
 }
 
-.info .info__wrapper .info__content .info__text-content .description__text:last-child, .statistic .statistic__wrapper .statistic__text .description__text:last-child {
-  margin: 0;
+.info .info__wrapper .info__content .info__text-content .description__accordion, .statistic .statistic__wrapper .description__accordion, .partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__accordion {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 120%;
+  color: #b4f299;
+}
+
+.info .info__wrapper .info__content .info__text-content .description__accordion::after, .statistic .statistic__wrapper .description__accordion::after, .partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__accordion::after {
+  content: "\25BC";
+  margin: 0 0 0 12px;
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+}
+
+@media (max-width: 768px) {
+  .info .info__wrapper .info__content .info__text-content .description__accordion, .statistic .statistic__wrapper .description__accordion, .partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__accordion {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.info .info__wrapper .info__content .info__text-content .description__accordion-after-rotate::after, .statistic .statistic__wrapper .description__accordion-after-rotate::after, .partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__accordion-after-rotate::after {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 * {
@@ -27,7 +56,6 @@
 
 html {
   overflow-x: hidden;
-  margin-right: calc(-1 * (100vw - 100%));
 }
 
 body {
@@ -908,20 +936,9 @@ body {
           flex: 1 1 578px;
 }
 
-.info .info__wrapper .info__content .info__text-content .description__accordeon {
-  display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 120%;
-  color: #b4f299;
-}
-
-.info .info__wrapper .info__content .info__text-content .description__accordeon::after {
-  content: "\25BC";
-  margin: 0 0 0 12px;
+.info .info__wrapper .info__content .info__text-content .description__text-area {
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
 }
 
 @media (max-width: 425px) {
@@ -965,16 +982,8 @@ body {
         -ms-flex: auto;
             flex: auto;
   }
-  .info .info__wrapper .info__content .info__text-content .description__text {
-    display: none;
-  }
-  .info .info__wrapper .info__content .info__text-content .description__text:first-child {
-    display: block;
-  }
-  .info .info__wrapper .info__content .info__text-content .description__accordeon {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .info .info__wrapper .info__content .info__text-content .description__text-area {
+    overflow: hidden;
   }
 }
 
@@ -1511,42 +1520,19 @@ body {
 
 .statistic .statistic__wrapper .statistic__text {
   margin: 90px 0 0 0;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
 }
 
 @media (max-width: 768px) {
-  .statistic .statistic__wrapper .statistic__text .description__text {
-    display: none;
-  }
-  .statistic .statistic__wrapper .statistic__text .description__text:first-child {
-    display: block;
+  .statistic .statistic__wrapper .statistic__text {
+    overflow: hidden;
   }
 }
 
 @media (max-width: 425px) {
   .statistic .statistic__wrapper .statistic__text .description__text {
     font-size: 14px;
-  }
-}
-
-.statistic .statistic__wrapper .description__accordeon {
-  display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 120%;
-  color: #b4f299;
-}
-
-.statistic .statistic__wrapper .description__accordeon::after {
-  content: "\25BC";
-  margin: 0 0 0 12px;
-}
-
-@media (max-width: 768px) {
-  .statistic .statistic__wrapper .description__accordeon {
-    display: block;
   }
 }
 
@@ -2698,6 +2684,10 @@ body {
   margin: 8px 43px 0 0;
 }
 
+.partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container {
+  z-index: 1;
+}
+
 .partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .partnership__text {
   font-size: 16px;
   font-weight: 500;
@@ -2712,28 +2702,6 @@ body {
     overflow: hidden;
     -webkit-box-orient: vertical;
     margin: 0 0 20px 0;
-  }
-}
-
-.partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__accordeon {
-  display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 120%;
-  color: #b4f299;
-}
-
-.partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__accordeon::after {
-  content: "\25BC";
-  margin: 0 0 0 12px;
-}
-
-@media (max-width: 768px) {
-  .partnership .partnership__wrapper .partnership__program .partnership__text-area .partnership__text-container .description__accordeon {
-    display: block;
   }
 }
 
