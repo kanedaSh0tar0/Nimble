@@ -95,7 +95,7 @@ $md5: 375px;
         &::after {
             content: "\25BC";
             margin: 0 0 0 12px;
-            transition: transform .3s linear;
+            transition: transform 0.3s linear;
         }
 
         @media (max-width: $md3) {
@@ -518,13 +518,15 @@ body {
             justify-content: space-evenly;
             flex-wrap: wrap;
             margin: 385px auto 0;
+            transition: transform 0.3s linear;
 
             .card-wrap {
+                position: relative;
                 transition: transform 0.3s linear, box-shadow 0.3s linear;
                 border-radius: 20px;
                 margin: 0 4px;
 
-                @media (min-width: $md3) {
+                @media (min-width: ($md3 + 1)) {
                     &:hover {
                         transform: translateY(-40px);
                         box-shadow: 0px 34px 74px 0px #a2dc8933;
@@ -557,7 +559,7 @@ body {
                         transition: opacity 0.3s linear;
                     }
 
-                    @media (min-width: $md3) {
+                    @media (min-width: ($md3 + 1)) {
                         &::after {
                             opacity: 0;
                             background: linear-gradient(139.69deg, #e3f784 3.61%, #7ee8a0 114.72%);
@@ -634,27 +636,19 @@ body {
                 }
 
                 @media (max-width: $md3) {
-                    margin: 0 36px 0 0;
-
-                    &:first-child {
-                        transform: translateY(-40px);
-                        box-shadow: 0px 34px 74px 0px #a2dc8933;
-                    }
+                    margin: 0 45px 0 0;
 
                     &:last-child {
                         margin: 0;
                     }
                 }
-            }
 
-            .cards-arrow {
-                display: none;
-                position: absolute;
-                left: 120px;
-                bottom: 0;
+                @media (max-width: $md4) {
+                    margin: 0 25px 0 0;
+                }
 
-                @media (max-width: $md3) {
-                    display: block;
+                @media (max-width: $md5) {
+                    margin: 0 15px 0 0;
                 }
             }
 
@@ -667,11 +661,27 @@ body {
                 min-width: fit-content;
                 margin: 160px 0 0;
                 flex-wrap: nowrap;
+
+                .card-wrap_active {
+                    transform: translateY(-40px);
+                    box-shadow: 0px 34px 74px 0px #a2dc8933;
+                }
             }
 
             @media (max-width: $md4) {
                 margin: 100px 0 0;
             }
+        }
+    }
+
+    .cards-arrow {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        transition: transform .3s linear;
+
+        @media (max-width: $md3) {
+            display: block;
         }
     }
 
@@ -720,10 +730,8 @@ body {
                 flex: 1 1 578px;
 
                 .description__text-area {
-                    transition: .2s linear;
+                    transition: 0.2s linear;
                 }
-
-                
 
                 @media (max-width: $md4) {
                     .description__title {
@@ -1186,7 +1194,7 @@ body {
         .statistic__text {
             @extend %description;
             margin: 90px 0 0 0;
-            transition: .2s linear;
+            transition: 0.2s linear;
 
             @media (max-width: $md3) {
                 overflow: hidden;
@@ -2035,11 +2043,6 @@ body {
                         color: #8fa2a6;
 
                         @media (max-width: $md3) {
-                            -webkit-line-clamp: 4;
-                            display: -webkit-box;
-                            overflow: hidden;
-                            -webkit-box-orient: vertical;
-
                             margin: 0 0 20px 0;
                         }
                     }
@@ -2049,7 +2052,7 @@ body {
                     padding: 80px 0 0;
                 }
 
-                @media (max-width: $md5) {
+                @media (max-width: $md4) {
                     padding: 50px 0 0;
                     flex-direction: column;
 
