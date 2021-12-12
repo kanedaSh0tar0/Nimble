@@ -6,7 +6,7 @@ const partnership = document.querySelector('.partnership__program-condition')
 let percentStop = false
 
 function percentAnim() {
-    let time = 1500
+    let time = 2000
     let maxStep = 15
     let stepTime = Math.round(time / maxStep)
     let step = 0
