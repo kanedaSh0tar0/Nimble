@@ -90,7 +90,6 @@ class Slider {
         }
 
         if (this.coordinates.xMove < -50 || this.coordinates.xMove > 50) {
-            console.log(this.slideCount * (this.cards[0].offsetWidth + this.indent))
             this.cardArea.style.transform = `translateX(-${this.slideCount * (this.cards[0].offsetWidth + this.indent)}px)`
         }
 
@@ -110,16 +109,18 @@ class Slider {
 
             this.slideCount = 0
             this.cardArea.style.transform = `translateX(0)`
-            this.arrow.style.transform = ''
             this.cards.forEach(i => i.classList.remove('card-wrap_active'))
-            this.cards[0].classList.add('card-wrap_active')
+            !this.cards ? this.cards[0].classList.add('card-wrap_active') : false
+            this.arrow ? this.arrow.style.transform = '' : false
+            this.coordinates.current ? this.coordinates.current = 0 : false
+
 
             this.arrowCenter.bind(this)()
         })
 
-        this.cardArea.addEventListener('touchstart', firstSlider.touchStart.bind(this))
-        this.cardArea.addEventListener('touchmove', firstSlider.touchMove.bind(this))
-        this.cardArea.addEventListener('touchend', firstSlider.touchEnd.bind(this))
+        this.cardArea.addEventListener('touchstart', this.touchStart.bind(this))
+        this.cardArea.addEventListener('touchmove', this.touchMove.bind(this))
+        this.cardArea.addEventListener('touchend', this.touchEnd.bind(this))
     }
 }
 
@@ -151,8 +152,65 @@ const secondSlider = new Slider({
     }
 })
 
+const thirdSlider = new Slider({
+    cardArea: '.kibotron__cards',
+    indent: document.querySelector('.kibotron__wrapper'),
+    cards: '.card-wrap',
+    arrow: '#cards-arrow3',
+    slideCount: 0,
+    coordinates: {
+        x: 0,
+        y: 0,
+        xMove: 0,
+        yMove: 0
+    }
+})
+
+class GrabSLider extends Slider {
+    constructor(options) {
+        super(options)
+    }
+
+    touchMove(event) {
+        super.touchMove(event)
+
+        this.cardArea.style.transform = `translateX(${this.coordinates.xMove + this.coordinates.current}px)`
+    }
+
+    touchEnd() {
+        this.coordinates.current = this.coordinates.xMove + this.coordinates.current
+
+        if (this.coordinates.current > 0) {
+            this.cardArea.style.transform = `translateX(0px)`
+            this.coordinates.current = 0
+        }
+        console.log(this.coordinates.current)
+
+        if (this.cardArea.offsetWidth - Math.abs(this.coordinates.current) < window.innerWidth - (this.indent * 2)) {
+            this.cardArea.style.transform = `translateX(-${this.cardArea.offsetWidth - (window.innerWidth - (this.indent * 2))}px)`
+            this.coordinates.current = -(this.cardArea.offsetWidth - (window.innerWidth - (this.indent * 2)))
+        }        
+    }
+
+    arrowCenter() {
+        return
+    }
+}
+
+const grabSLider = new GrabSLider({
+    cardArea: '.statistic__charts-wrapper',
+    indent: document.querySelector('.sale__wrapper'),
+    coordinates: {
+        x: 0,
+        y: 0,
+        xMove: 0,
+        yMove: 0,
+        current: 0
+    }
+})
+
 firstSlider.init()
 secondSlider.init()
+thirdSlider.init()
 
-
-
+grabSLider.init()

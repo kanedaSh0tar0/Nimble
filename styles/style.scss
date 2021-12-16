@@ -1097,56 +1097,63 @@ body {
             min-width: fit-content;
             margin: 35px 0 0 0;
 
-            .statistic__charts-wrapper {
-                width: fit-content;
+            .statistic__charts-marker-area {
+                position: absolute;
                 display: flex;
-                align-items: flex-end;
+                flex-direction: column;
+                top: 15px;
+                left: 82px;
 
-                .statistic__charts-marker-area {
-                    position: absolute;
-                    display: flex;
-                    flex-direction: column;
-                    top: 15px;
-                    left: 82px;
+                .statistic__charts-marker {
+                    position: relative;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 400%;
 
-                    .statistic__charts-marker {
-                        position: relative;
-                        font-size: 12px;
-                        font-weight: 600;
-                        line-height: 400%;
-
-                        &::before {
-                            content: "";
-                            position: absolute;
-                            width: 10px;
-                            height: 10px;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            left: -20px;
-                            border-radius: 50%;
-                        }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -20px;
+                        border-radius: 50%;
                     }
+                }
 
-                    .statistic__charts-marker_orange {
-                        color: #d8a834;
+                .statistic__charts-marker_orange {
+                    color: #d8a834;
 
-                        &::before {
-                            background: linear-gradient(139.33deg, #bbc423 -14.59%, #e99a3d 99.86%);
-                        }
-                    }
-
-                    .statistic__charts-marker_green {
-                        color: #7ee8a0;
-
-                        &::before {
-                            background: linear-gradient(105.56deg, #e2f685 18.43%, #8af9ad 89.58%);
-                        }
+                    &::before {
+                        background: linear-gradient(139.33deg, #bbc423 -14.59%, #e99a3d 99.86%);
                     }
 
                     @media (max-width: $md2) {
-                        left: 22px;
+                        margin: 0 45px 0 0;
                     }
                 }
+
+                .statistic__charts-marker_green {
+                    color: #7ee8a0;
+
+                    &::before {
+                        background: linear-gradient(105.56deg, #e2f685 18.43%, #8af9ad 89.58%);
+                    }
+                }
+
+                @media (max-width: $md3) {
+                    flex-direction: row;
+                    top: -40px;
+                    left: 22px;
+                }
+            }
+
+            .statistic__charts-wrapper {
+                width: max-content;
+                display: flex;
+                align-items: flex-end;
+                transition: transform .1s linear;
 
                 .statistic__charts-column {
                     display: flex;
@@ -1178,6 +1185,14 @@ body {
                     &:last-child {
                         margin: 0;
                     }
+
+                    @media (max-width: $md2) {
+                        margin: 0 40px 0 0;
+                    }
+
+                    @media (max-width: $md3) {
+                        margin: 0 80px 0 0;
+                    }
                 }
             }
         }
@@ -1196,7 +1211,7 @@ body {
                 }
             }
 
-            @media (max-width: $md2) {
+            @media (max-width: $md3) {
                 display: block;
             }
         }
@@ -2260,6 +2275,8 @@ body {
             }
 
             .kibotron__cards {
+                transition: transform .5s linear;
+
                 .kibotron__cards-row {
                     display: flex;
                     margin: 0 0 42px 0;
@@ -2270,7 +2287,12 @@ body {
 
                     .card-wrap {
                         margin: 0 35px 0 0;
-                        transition: transform 1s linear;
+                        padding: 1px;
+                        transition: transform .5s linear;
+
+                        &:last-child {
+                            margin: 0;
+                        }
 
                         .card {
                             position: relative;
@@ -2280,10 +2302,6 @@ body {
                             border-radius: 20px;
                             background: $ColorBlack;
                             padding: 56px 52px 0 95px;
-
-                            &:last-child {
-                                margin: 0;
-                            }
 
                             &::before {
                                 content: "";
@@ -2374,19 +2392,36 @@ body {
                         }
 
                         @media (max-width: $md3) {
-                            &:first-child {
-                                transform: translateY(-44px);
-                            }
+                            margin: 0 45px 0 0;
+                        }
+                    
+                        @media (max-width: $md4) {
+                            margin: 0 25px 0 0;
+                        }
+                    
+                        @media (max-width: $md5) {
+                            margin: 0 15px 0 0;
                         }
                     }
 
                     @media (max-width: $md3) {
-                        margin: 0;
+                        margin: 0 45px 0 0;
 
                         &:first-child {
-                            margin: 0 35px 0 0;
                             float: left;
                         }
+
+                        .card-wrap_active {
+                            transform: translateY(-44px);
+                        }
+                    }
+
+                    @media (max-width: $md4) {
+                        margin: 0 25px 0 0;
+                    }
+                
+                    @media (max-width: $md5) {
+                        margin: 0 15px 0 0;
                     }
                 }
             }
