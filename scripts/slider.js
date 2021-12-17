@@ -110,7 +110,8 @@ class Slider {
             this.slideCount = 0
             this.cardArea.style.transform = `translateX(0)`
             this.cards.forEach(i => i.classList.remove('card-wrap_active'))
-            !this.cards ? this.cards[0].classList.add('card-wrap_active') : false
+            
+            this.cards ? this.cards[0].classList.add('card-wrap_active') : false
             this.arrow ? this.arrow.style.transform = '' : false
             this.coordinates.current ? this.coordinates.current = 0 : false
 
